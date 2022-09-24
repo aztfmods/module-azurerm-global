@@ -7,7 +7,7 @@ provider "azurerm" {
 #----------------------------------------------------------------------------------------
 
 resource "azurerm_resource_group" "rg" {
-  for_each = var.resourcegroups
+  for_each = var.groups
 
   name     = each.value.name
   location = each.value.location

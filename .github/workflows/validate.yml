@@ -2,15 +2,15 @@ name: validate
 
 on:
   workflow_call:
-    secrets:
-      ARM_CLIENT_ID:
-        required: true
-      ARM_CLIENT_SECRET:
-        required: true
-      ARM_SUBSCRIPTION_ID:
-        required: true
-      ARM_TENANT_ID:
-        required: true
+    # secrets:
+    #   ARM_CLIENT_ID:
+    #     required: true
+    #   ARM_CLIENT_SECRET:
+    #     required: true
+    #   ARM_SUBSCRIPTION_ID:
+    #     required: true
+    #   ARM_TENANT_ID:
+    #     required: true
 
 jobs:
   validate:
@@ -20,7 +20,8 @@ jobs:
     if: |
       startsWith(github.head_ref, 'feat/') ||
       startsWith(github.head_ref, 'fix/')
-    env:
+    # env:
+    secrets:
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}

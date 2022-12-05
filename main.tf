@@ -9,6 +9,6 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg" {
   for_each = var.rgs
 
-  name     = each.value.name
+  name     = "rg-${var.company}-${each.key}-${var.env}-${var.region}"
   location = each.value.location
 }

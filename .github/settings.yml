@@ -20,7 +20,6 @@ repository:
   - terraform
   - module
   - azure
-  - test
 
   security:
   enableVulnerabilityAlerts: true

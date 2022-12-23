@@ -1,0 +1,76 @@
+#this settings can be used to create org level settings
+
+repository:
+  auto_init: true
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  default_branch: main
+  gitignore_template: terraform
+  license_template: mit
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: true
+  allow_auto_merge: false
+  delete_branch_on_merge: true
+#   private: true
+#   visibility: private
+
+  topics:
+  - terraform
+  - module
+  - azure
+
+  security:
+  enableVulnerabilityAlerts: true
+
+labels:
+  - name: integration
+    color: '#FEF2C0'
+    description: integration
+  - name: module
+    color: '#7BE107'
+    description: module
+  - name: 'needs refinement'
+    color: '#B533B3'
+    description: 'needs refinement'
+  - name: bug
+    color: '#B60205'
+    description: bug
+  - name: 'autorelease: pending'
+    color: '#3A51D2'
+    description: 'autorelease: pending'
+  - name: 'missing functionality'
+    color: '#D4C5F9'
+    description: 'missing functionality'
+  - name: 'documentation'
+    color: '#EDA957'
+    description: 'documentation'
+  - name: 'enhancement'
+    color: '#E8887D'
+    description: 'enhancement'
+  - name: 'wont fix'
+    color: '#FBCA04'
+    description: 'wont fix'
+  - name: 'investigate'
+    color: '#686E70'
+    description: 'investigate'
+  - name: 'new resource'
+    color: '#942C35'
+    description: 'new resource'
+
+branches:
+  - name: default
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: false
+        require_code_owner_reviews: true
+      required_status_checks: null
+        # strict: false
+        # contexts: []
+      enforce_admins: false
+      restrictions: null
+
+validator:
+  pattern: '[a-zA-Z0-9_-]+'
